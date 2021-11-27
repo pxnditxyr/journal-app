@@ -1,9 +1,9 @@
+import { AppRouter } from './routers/AppRouter';
 
 export const Journal = () => {
     return (
         <>
-            <h1> Journal </h1>
-            <hr />
+            <AppRouter />
         </>
     );
 };
