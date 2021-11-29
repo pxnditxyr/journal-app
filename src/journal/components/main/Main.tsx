@@ -1,9 +1,15 @@
+import { Sidebar } from '../sidebar/Sidebar';
 
 export const Main = () => {
     return (
         <>
-            <h1> Main </h1>
-            <hr />
+            <Sidebar />
+
+            <main>
+
+                <h1> Main </h1>
+
+            </main>
         </>
     );
 };
