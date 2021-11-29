@@ -1,0 +1,50 @@
+.notes__main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.notes__appbar {
+    align-items: center;
+    background-color: $primary;
+    color: $white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+
+.notes__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
+}
+
+.notes__title-input, .notes__textarea {
+    border: none;
+    padding: 0.5rem;
+    &:focus {
+        outline: none;
+    }
+}
+
+.notes__title-input {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.notes__textarea {
+    color: $dark;
+    font-size: 1.5rem;
+    flex: 1 1 auto;
+    resize: none;
+
+}
+
+.notes__image img {
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.8);
+    width: 150px;
+    height: 150px;
+}
