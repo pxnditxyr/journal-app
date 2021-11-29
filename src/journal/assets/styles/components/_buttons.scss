@@ -6,18 +6,23 @@
     border: none;
     background-color: transparent;
     height: 40px;
+    color: white;
+    cursor: pointer;
+
+    transition: color .3s ease-in-out;
 
     &:focus {
         outline: none;
     }
+    &:hover {
+        color: darken( white, 20% );
+    }
 }
 
 .btn-primary {
-    color: #fff;
-    cursor: pointer;
     background-color: $primary;
 
-    transition: background-color 0.3s ease;
+    transition: background-color .3s ease;
 
     &:hover {
         background-color: darken( $primary, 10% );
