@@ -1,6 +1,8 @@
 
 .journal__main-container {
     display: flex;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .journal__sidebar {
@@ -11,7 +13,11 @@
     padding: 0 10px;
     width: 450px;
     min-width: 300px;
-    height: 100vh;
+    height: 100%;
+}
+
+.journal__sidebar-responsive {
+    display: none;
 }
 
 .journal__sidebar-navbar {

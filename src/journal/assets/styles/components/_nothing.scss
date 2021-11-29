@@ -1,0 +1,18 @@
+
+.nothing__main-container {
+    align-items: center;
+    background-color: $primary;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    span {
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    i {
+        color: $accent;
+    }
+}
