@@ -1,4 +1,5 @@
 import { Sidebar } from '../sidebar/Sidebar';
+import { NothingSelected } from '../nothing-selected/NothingSelected';
 
 export const Main = () => {
     return (
@@ -7,7 +8,7 @@ export const Main = () => {
 
             <main>
 
-                <h1> Main </h1>
+                <NothingSelected />
 
             </main>
         </>
