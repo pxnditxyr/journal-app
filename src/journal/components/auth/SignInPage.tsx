@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
-import { login } from '../../actions/auth';
+import { startLoginEmailPassword, startGoogleSignIn } from '../../actions/auth';
 
 export const SignInPage = () => {
 
@@ -10,12 +10,16 @@ export const SignInPage = () => {
     const { userName, password, handleInputChange } = useForm({
         userName: "",
         password: ""
-    })
+    });
 
     const handleLogin = ( event : React.FormEvent<HTMLFormElement> ) => {
         event.preventDefault();
-        dispatch( login( "12345", userName ) );
-    }
+        dispatch( startLoginEmailPassword( userName, password ) );
+    };
+
+    const handleGoogleSignIn = () => {
+        dispatch( startGoogleSignIn() );
+    };
 
     return (
         <>
@@ -48,7 +52,10 @@ export const SignInPage = () => {
                 </button>
                 <div className="auth__social-networks">
                     <p> Sign in with social networks </p>
-                    <div className="google-btn">
+                    <div 
+                        className="google-btn"
+                        onClick={ handleGoogleSignIn }
+                    >
                         <div className="google-icon-wrapper">
                             <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="google-icon"/>
                         </div>
