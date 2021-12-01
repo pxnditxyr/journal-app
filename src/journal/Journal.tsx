@@ -1,9 +1,12 @@
 import { AppRouter } from './routers/AppRouter';
+import { StoreProvider } from './store/StoreProvider';
 
 export const Journal = () => {
     return (
-        <div className="journal__main-container">
-            <AppRouter />
-        </div>
+        <StoreProvider>
+            <div className="journal__main-container">
+                <AppRouter />
+            </div>
+        </StoreProvider>
     );
 };
