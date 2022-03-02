@@ -1,14 +1,29 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { JournalEntries } from '../journal-entries/JournalEntries';
+import { startSignOut } from '../../actions/auth';
+import { State } from '../../interfaces/interfaces';
 
 export const Sidebar = () => {
+
+    const dispatch = useDispatch();
+    const { name } = useSelector( ( state : State ) => state.auth )
+    
+
+    const handleLogout = () => {
+        dispatch( startSignOut() );
+    };
+
     return (
         <aside className="journal__sidebar">
             <div className="journal__sidebar-navbar">
                 <h3 className="">
                     <i className="fas fa-cat"></i>
-                    <span> @yuki </span>
+                    <span> @{ name } </span>
                 </h3>
-                <button className="btn">
+                <button 
+                    className="btn"
+                    onClick={ handleLogout }
+                >
                     Logout
                 </button>
             </div>
