@@ -14,18 +14,23 @@
     &:focus {
         outline: none;
     }
-    &:hover {
+    &:enabled:hover {
         color: darken( white, 20% );
     }
 }
+
 
 .btn-primary {
     background-color: $primary;
 
     transition: background-color .3s ease;
 
-    &:hover {
+    &:enabled:hover {
         background-color: darken( $primary, 10% );
+    }
+    &:disabled {
+        cursor: not-allowed;
+        background-color: lighten( $light, 20% );
     }
 }
 

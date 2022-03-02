@@ -7,6 +7,7 @@
     justify-content: center;
     width: 100vw;
     padding: 20px;
+    overflow: scroll;
 }
 
 .auth__box-container {
@@ -42,7 +43,6 @@
     box-shadow: 5px 5px 10px $secondary;
     color: $dark;
     font-size: 1.2rem;
-    margin-bottom: 20px;
     padding: 10px 20px;
     width: 100%;
 
@@ -60,4 +60,21 @@
         font-weight: bold;
         margin-bottom: 20px;
     }
+}
+
+.auth__alert-error {
+    color: $white;
+    background-color: $error;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+
+.auth__alert-error ul {
+    padding: 0 20px;
+    // list-style: none;
+    // border: 1px solid #ff0;
 }
