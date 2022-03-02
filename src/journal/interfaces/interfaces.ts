@@ -29,9 +29,23 @@ export interface State {
     ui : { 
             loading : boolean,
             msgError : String
-    }, 
+    };
     auth : { 
             uid : string,
             name : string
-    } 
+    };
+    notes : NotesState;
 };
+
+export interface Note {
+    id: string;
+    title: string;
+    content: string;
+    imgUrl: string;
+    createdAt: Date;
+}
+
+export interface  NotesState {
+    notes: Note[];
+    activeNote: Note | null;
+}
