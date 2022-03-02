@@ -1,18 +1,22 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import { startLoginEmailPassword, startGoogleSignIn } from '../../actions/auth';
+import { State } from '../../interfaces/interfaces';
+
+ 
 
 export const SignInPage = () => {
 
     const dispatch = useDispatch();
+    const { loading } = useSelector( ( state : State ) => state.ui );
 
     const { userName, password, handleInputChange } = useForm({
-        userName: "",
-        password: ""
+        userName: "ehhh@gmail.com",
+        password: "Madara987*!"
     });
 
-    const handleLogin = ( event : React.FormEvent<HTMLFormElement> ) => {
+    const handleSignIn = ( event : React.FormEvent<HTMLFormElement> ) => {
         event.preventDefault();
         dispatch( startLoginEmailPassword( userName, password ) );
     };
@@ -24,10 +28,10 @@ export const SignInPage = () => {
     return (
         <>
             <h3 className="auth__title"> Sign In </h3>
-            <form className="auth__form" onSubmit={ handleLogin }>
+            <form className="auth__form" onSubmit={ handleSignIn }>
                 <input 
                     className="auth__input"
-                    type="text" 
+                    type="email" 
                     placeholder="Username or Email"
                     name="userName"
                     autoComplete="off"
@@ -45,8 +49,9 @@ export const SignInPage = () => {
                 />
                 
                 <button
-                    className="btn btn-primary btn-block"
+                    className="btn btn-primary btn-block disable"
                     type="submit"
+                    disabled={ loading }
                 > 
                     Sign In 
                 </button>
