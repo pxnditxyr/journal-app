@@ -3,7 +3,6 @@ import { Dispatch } from 'redux';
 import { googleAuthProvider, auth } from '../firebase/firebaseConfig';
 import {
     signInWithPopup,
-    GoogleAuthProvider,
     createUserWithEmailAndPassword,
     updateProfile,
     signInWithEmailAndPassword,
@@ -54,8 +53,7 @@ export const startGoogleSignIn = () => {
             .then( ({ user }) => {
                 dispatch( signIn( user.uid, user.displayName || "" ) )
             }
-        ).catch((error) => {
-            const credential = GoogleAuthProvider.credentialFromError( error );
+        ).catch( ( error ) => {
             Swal.fire({ 
                 title: 'Error',
                 text: errorMessagesFirebase( error.code ),
