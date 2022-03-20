@@ -42,7 +42,7 @@ export interface Note {
     title: string;
     content: string;
     imgUrl: string;
-    createdAt: Date;
+    createdAt: number;
 }
 
 export interface  NotesState {

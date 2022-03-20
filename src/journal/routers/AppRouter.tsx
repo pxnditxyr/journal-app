@@ -13,16 +13,19 @@ import { signIn } from '../actions/auth';
 import { PrivateRoute } from './PrivateRoute';
 import { PublicRoute } from './PublicRoute';
 
+import { startLoadingNotes } from '../actions/notes';
+
 export const AppRouter = () => {
     const dispatch = useDispatch();
     const [ checking, setChecking ] = useState( true );
     const [ isLoggedIn, setLoggedIn ] = useState( false );
     
     useEffect( () => {
-        auth.onAuthStateChanged( ( user ) => {
+        auth.onAuthStateChanged( async( user ) => {
             if ( user?.uid ) {
                 dispatch( signIn( user.uid, user.displayName || "" ) )
                 setLoggedIn( true );
+                dispatch( startLoadingNotes( user.uid ) );
             } else {
                 setLoggedIn( false );
             }

@@ -10,6 +10,7 @@ import {
 } from 'firebase/auth';
 import { startLoadingAction, stopLoadingAction } from '../actions/ui';
 import { errorMessagesFirebase } from '../helpers/errorMessages';
+import { notesLogout } from './notes';
 
 export const startLoginEmailPassword = ( email : string, password : string ) => {
     return ( dispatch : Dispatch ) => {
@@ -77,6 +78,7 @@ export const startSignOut = () => {
     return async( dispatch : Dispatch ) =>{
         await signOut( auth );
         dispatch( logout() );
+        dispatch( notesLogout() );
     }
 }
 
