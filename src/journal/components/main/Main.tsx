@@ -9,8 +9,6 @@ export const Main = () => {
 
     const { activeNote } = useSelector( ( state : State ) => state.notes );
 
-    // console.log( activeNote );
-
     return (
         <>
             <Sidebar />
