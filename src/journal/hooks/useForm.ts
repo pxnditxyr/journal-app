@@ -10,12 +10,24 @@ export const useForm = <T extends Object> ( initialState : T ) => {
             [ name ]: value,
         });
     };
+
+    const handleTextAreaChange = ( { target } : React.ChangeEvent<HTMLTextAreaElement> ) => {
+        const { name, value } = target;
+        setForm({
+            ...form,
+            [ name ]: value,
+        });
+    };
     const handleReset = () => setForm( initialState );
+
+    const resetForm = ( newState : T = initialState ) => setForm( newState );
 
     return {
         form,
         handleInputChange,
+        handleTextAreaChange,
         handleReset,
+        resetForm,
         ...form,
     }
 };
