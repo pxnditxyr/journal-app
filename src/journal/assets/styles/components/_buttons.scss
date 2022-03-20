@@ -38,6 +38,31 @@
     width: 100%;
 }
 
+.btn-danger {
+    background-color: $danger;
+    font-size: 32px;
+    color: white;
+
+    transition: background-color .3s ease;
+
+    &:enabled:hover {
+        background-color: darken( $danger, 10% );
+    }
+    &:disabled {
+        cursor: not-allowed;
+        background-color: lighten( $light, 20% );
+    }
+}
+
+.btn-float-right {
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    right: 2em;
+    bottom: 2em;
+}
+
 .google-btn {
     background-color: $google-blue;
     border-radius: 2px;
